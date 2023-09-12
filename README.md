@@ -1,6 +1,6 @@
 # e
 
-Is is a cut down version of [evy](https://github.com/foxygoat/evy).
+`e` is a cut down version of [evy](https://github.com/foxygoat/evy).
 
 This repository demonstrates how to build a minimal lexer and parser from
 scratch without using any external libraries.

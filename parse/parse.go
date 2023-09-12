@@ -82,13 +82,13 @@ func (p *parser) parseIfStmt() Node {
 }
 
 func (p *parser) parseAssignStmt() Node {
-	// ident "=" expr .
 	varName := p.cur().Lit
 	target := p.scope.get(varName)
 	p.advance() // advance past IDENT
 	p.advance() // advance past ASSIGN
-	val := p.parseExpr()
+	val := p.parseExpr(lowest)
 	assertTypes(target, lex.Assign, val)
+	p.assertStmtEnd()
 	return &Assign{target, val}
 }
 
